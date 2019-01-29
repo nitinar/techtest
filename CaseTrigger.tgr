@@ -1,0 +1,13 @@
+/*
+  Venkat Akula   Created 29 Jan 2019
+*/
+
+trigger CaseTrigger on Case (after insert) {
+    
+    CaseTriggerHandler handler = new CaseTriggerHandler(Trigger.isExecuting, Trigger.size);
+    
+    if(Trigger.isInsert && Trigger.isAfter){
+        handler.OnAfterInsert(Trigger.new);
+    }
+    
+}

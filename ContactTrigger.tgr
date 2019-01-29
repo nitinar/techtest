@@ -1,0 +1,13 @@
+/*
+  Venkat Akula   Created 29 Jan 2019
+*/
+
+trigger ContactTrigger on Contact (after insert) {
+    
+    ContactTriggerHandler handler = new ContactTriggerHandler(Trigger.isExecuting, Trigger.size);
+    
+    if(Trigger.isInsert && Trigger.isAfter){
+        handler.OnAfterInsert(Trigger.new);
+    }
+
+}
