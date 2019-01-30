@@ -29,6 +29,7 @@ public with sharing class ContactTriggerHandler {
            } else if(String.isNotBlank(newContact.Level__c) && newContact.Level__c == 'Secondary'){
              c.Priority = 'Medium';
            } else{
+             // If the Contact level is neither Primary/Secondary then Priority on case is set to Low
              c.Priority = 'Low';
            }
            // assign Account to the Case if the Case on Contact is not null
